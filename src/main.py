@@ -1,6 +1,9 @@
-from actions.greeting import GreetingAction
-from actions.weather import WeatherAction
-from config import Config
+"""
+Contains main logic of the app
+"""
+from src.actions.greeting import GreetingAction
+from src.actions.weather import WeatherAction
+from src.config import Config
 
 if __name__ == '__main__':
     config = Config()

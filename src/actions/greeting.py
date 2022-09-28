@@ -1,14 +1,25 @@
-from src.action import Action
+"""
+Module containing the GreetingAction.
+This greets the user, by showing the time of day.
+"""
 from datetime import datetime
+from src.action import Action
 
 
 class GreetingAction(Action):
+    """
+    Greets the user
+    """
     def __init__(self, name: str):
-        super(GreetingAction, self).__init__('Greeting')
+        super().__init__('Greeting')
 
         self.__name = name
 
     def call(self) -> str:
+        """
+        Gets the current time of day and displays a proper greeting to the user
+        :return: str, containing the greeeting
+        """
         now = datetime.now()
 
         current_hour = int(now.strftime('%H'))
