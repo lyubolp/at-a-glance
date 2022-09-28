@@ -1,6 +1,4 @@
 import requests
-import sys
-import json
 
 from action import Action
 from datetime import datetime
