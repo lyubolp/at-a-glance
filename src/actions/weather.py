@@ -1,6 +1,6 @@
 import requests
 
-from action import Action
+from src.action import Action
 from datetime import datetime
 
 
