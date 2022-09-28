@@ -21,4 +21,4 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         cd src
-        pylint *.py --fail-under=8.5
+        find . -type f -name "*.py" | xargs pylint --fail-under=8.5
