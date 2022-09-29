@@ -1,4 +1,5 @@
 # At a glance !
+![Logo](https://raw.githubusercontent.com/lyubolp/at-a-glance/main/logo.png?token=GHSAT0AAAAAABWW2UTK6N3GWRLUCQK6K7BSYZWBMNQ)
 
 Small script which reports what you have planned for the day
 
