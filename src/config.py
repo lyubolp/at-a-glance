@@ -4,6 +4,8 @@ Contains the classes responsible for reading from config files
 import os
 import json
 
+from typing import Any
+
 
 class Config:
     """
@@ -28,5 +30,5 @@ class Config:
 
             self.__items = content
 
-    def __getitem__(self, item) -> any:
+    def __getitem__(self, item) -> Any:
         return self.__items[item]
