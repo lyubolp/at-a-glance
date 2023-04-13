@@ -7,9 +7,9 @@ init:
     pip install -r requirements.txt
 
 lint: venv
-    python3 -m pylint */*.py main.py --fail-under 9
-    mypy src main.py
-    flake8 src main.py
+    python3 -m pylint */*.py --fail-under 9
+    mypy src
+    flake8 src
 
 test: venv
     python3 -m unittest discover -s tests
