@@ -45,7 +45,7 @@ class TestConfig(unittest.TestCase):
         config = Config()
 
         # Act
-        config.load("config.json")
+        config.load(self.__temp_json_file_path)
 
         # Assert
         self.assertEqual(config["name"], "test")

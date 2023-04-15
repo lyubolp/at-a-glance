@@ -158,7 +158,7 @@ class TestGreetingAction(unittest.TestCase):
         # Assert
         self.assertTrue(result.startswith('Good afternoon'))
         self.assertTrue(name in result)
-    
+
     @patch('src.actions.greeting.datetime')
     def test_09_afternoon_2(self, mock_datetime):
         """
@@ -177,7 +177,7 @@ class TestGreetingAction(unittest.TestCase):
         # Assert
         self.assertTrue(result.startswith('Good afternoon'))
         self.assertTrue(name in result)
-    
+
     @patch('src.actions.greeting.datetime')
     def test_10_afternoon_3(self, mock_datetime):
         """
