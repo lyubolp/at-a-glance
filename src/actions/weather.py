@@ -13,6 +13,7 @@ class WeatherAction(Action):
     """
     Implements requests to OpenWeatherMap API to get info about the weather.
     """
+
     def __init__(self, lat: float, lon: float, api_key: str, city_name: str):
         """
         For the API to work, we need an API key,
@@ -29,6 +30,8 @@ class WeatherAction(Action):
         self.__api_key = api_key
         self.__city_name = city_name
 
+        self.__main_url = 'https://api.openweathermap.org/data/2.5/weather?'
+
     def call(self) -> str:
         """
         Returns the weather now and the weather for today
@@ -43,7 +46,7 @@ class WeatherAction(Action):
         Returns the weather and temperature for a given location
         :return: str, containing the action result
         """
-        weather_now = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric'
+        weather_now = self.__main_url + 'lat={lat}&lon={lon}&appid={api_key}&units=metric'
         response = self.__get_weather_from_api(weather_now)
 
         weather_like = response['weather'][0]['main']
@@ -58,13 +61,15 @@ class WeatherAction(Action):
         Returns the weather and temperature for a given location until the end of the day
         :return: str, containing the action result
         """
-        weather_today = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}&units=metric'
+        weather_today = 'https://api.openweathermap.org/data/2.5/forecast?' + \
+            'lat={lat}&lon={lon}&appid={api_key}&units=metric'
 
         response = self.__get_weather_from_api(weather_today)
 
         weather = response['list']
         current_day = datetime.now().strftime('%Y-%m-%d')
-        temp_today = [WeatherAction.__get_weather_text_for_today(item) for item in weather if current_day in item['dt_txt']]
+        temp_today = [WeatherAction.__get_weather_text_for_today(item)
+                      for item in weather if current_day in item['dt_txt']]
 
         result = 'The weather in ' + self.__city_name + ' today will be ' + '. '.join(temp_today)
 

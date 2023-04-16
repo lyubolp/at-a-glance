@@ -16,7 +16,7 @@ if __name__ == '__main__':
                             config['weather']['api_key'],
                             config['weather']['location'][2])
     calendar = CalendarAction()
-    
+
     actions = [greet, weather, calendar]
 
     for action in actions:
