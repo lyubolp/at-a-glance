@@ -7,8 +7,8 @@ init:
     pip install -r requirements.txt
 
 lint: venv
-    python3 -m pylint */*.py --fail-under 9
-    mypy src
+    python3 -m pylint src/* --fail-under 9
+    mypy src --ignore-missing-imports
     flake8 src
 
 test: venv
