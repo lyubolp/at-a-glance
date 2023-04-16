@@ -1,3 +1,6 @@
+"""
+Contains the unit tests for the config module
+"""
 import json
 import os
 import unittest
@@ -6,6 +9,9 @@ from src.config import Config
 
 
 class TestConfig(unittest.TestCase):
+    """
+    Test the Config class
+    """
     @classmethod
     def setUpClass(cls):
         """
@@ -13,7 +19,7 @@ class TestConfig(unittest.TestCase):
         """
         cls.__temp_json_file_path = 'temp.json'
         TestConfig.__create_temp_json_file(cls.__temp_json_file_path)
-    
+
     @classmethod
     def tearDownClass(cls):
         """
