@@ -1,3 +1,6 @@
+"""
+Contains the tests for the GreetingAction
+"""
 import unittest
 
 from datetime import datetime
@@ -37,9 +40,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 6, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 6, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Good morning'))
@@ -56,9 +58,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 11, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 11, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Good morning'))
@@ -75,9 +76,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 8, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 8, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Good morning'))
@@ -94,9 +94,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 12, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 12, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Hello'))
@@ -113,9 +112,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 14, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 14, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Hello'))
@@ -132,9 +130,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 12, 53, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 12, 53, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Hello'))
@@ -151,9 +148,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 15, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 15, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Good afternoon'))
@@ -170,9 +166,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 18, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 18, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Good afternoon'))
@@ -189,9 +184,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 17, 21, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 17, 21, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Good afternoon'))
@@ -208,9 +202,8 @@ class TestGreetingAction(unittest.TestCase):
         action = GreetingAction(name)
 
         # Act
-        with patch('src.actions.greeting.datetime') as mock_datetime:
-            mock_datetime.now.return_value = datetime(2023, 4, 11, 19, 1, 0)
-            result = action.call()
+        mock_datetime.now.return_value = datetime(2023, 4, 11, 19, 1, 0)
+        result = action.call()
 
         # Assert
         self.assertTrue(result.startswith('Good evening'))
